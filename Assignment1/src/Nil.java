@@ -5,6 +5,14 @@ public class Nil implements ImmutableList {
         return other instanceof Nil;
     } // equals
 
+    public String toString() {
+        return "Nil";
+    } // toString
+
+    public int hashCode() {
+        return 0;
+    } // hashCode
+
     @Override
     public int length() {
         return 0;
@@ -24,13 +32,5 @@ public class Nil implements ImmutableList {
     public boolean contains(int value) {
         return false;
     }
-
-    public String toString() {
-        return "Nil";
-    } // toString
-
-    public int hashCode() {
-        return 0;
-    } // hashCode
 } // Nil
     

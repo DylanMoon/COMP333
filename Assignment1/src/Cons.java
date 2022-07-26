@@ -18,6 +18,14 @@ public class Cons implements ImmutableList {
         }
     } // equals
 
+    public String toString() {
+        return "Cons(" + head + ", " + tail.toString() + ")";
+    } // toString
+
+    public int hashCode() {
+        return sum();
+    } // hashCode
+
     @Override
     public int length() {
         return 1 + tail.length();
@@ -37,12 +45,4 @@ public class Cons implements ImmutableList {
     public boolean contains(int value) {
         return head == value || tail.contains(value);
     }
-
-    public String toString() {
-        return "Cons(" + head + ", " + tail.toString() + ")";
-    } // toString
-
-    public int hashCode() {
-        return sum();
-    } // hashCode
 } // Cons
