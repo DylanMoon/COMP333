@@ -95,6 +95,7 @@ Cons.prototype = new List();
 Cons.prototype.isEmpty = function () {
     return false;
 }
+//Begin Cons work in assignment
 Cons.prototype.length = function () {
     return 1 + this.tail.length();
 }
@@ -104,13 +105,13 @@ Cons.prototype.append = function (x) {
 Cons.prototype.contains = function (x) {
     return this.head === x || this.tail.contains(x);
 }
-Cons.prototype.filter = function (x)  {
-    //TODO: is this right?
+Cons.prototype.filter = function (x) {
     return x(this.head) ? new Cons(this.head, this.tail.filter(x)) : this.tail.filter(x);
 }
 Cons.prototype.map = function (x) {
     return new Cons(x(this.head), this.tail.map(x));
 }
+//end work from Moon
 
 function Nil() {}
 
@@ -118,6 +119,7 @@ Nil.prototype = new List();
 Nil.prototype.isEmpty = function () {
     return true;
 }
+//Begin Nil work in assignment
 Nil.prototype.length = function () {
     return 0;
 }
@@ -133,6 +135,7 @@ Nil.prototype.filter = function (x) {
 Nil.prototype.map = function (x) {
     return this;
 }
+//end work from Moon
 
 // ---BEGIN CODE FOR TESTING---
 // Do not modify!  When I test your code myself,
