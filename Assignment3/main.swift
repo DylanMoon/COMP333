@@ -121,6 +121,7 @@ extension MyList {
         }
     }
 
+//TODO: zero??? add??
     func sum(zero: A, add: (A, A) -> Int) -> Int{
         switch self {
         case let .cons(head, tail):
