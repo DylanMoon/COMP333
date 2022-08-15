@@ -121,13 +121,12 @@ extension MyList {
         }
     }
 
-//TODO: zero??? add??
-    func sum(zero: A, add: (A, A) -> Int) -> Int{
+    func sum(zero: A, add: (A, A) -> A) -> A{
         switch self {
         case let .cons(head, tail):
-            return add(zero, head) + tail.sum(zero: zero, add: add);
+            return add(head, tail.sum(zero: zero, add: add));
         case .empty:
-            return 0;            
+            return zero;            
         }
     }
         // end homework code
