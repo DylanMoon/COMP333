@@ -85,7 +85,7 @@ extension MyList {
         }
     }
 
-    func append(other: MyList) -> MyList{
+    func append(other: MyList<A>) -> MyList<A>{
         switch self{
             case let .cons(head, tail):
                 return MyList.cons(head, tail.append(other: other));
@@ -103,7 +103,7 @@ extension MyList {
         }
     }
 
-    func filter(predicate: (A) -> Bool) -> MyList{
+    func filter(predicate: (A) -> Bool) -> MyList<A>{
         switch self{
             case let .cons(head, tail) :
                 return predicate(head) ? MyList.cons(head, tail.filter(predicate: predicate)) : tail.filter(predicate: predicate);
